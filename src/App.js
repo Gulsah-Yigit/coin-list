@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import axios from "axios";
 
-function App() {
+import { setCoinList } from "./store/reducers/coinState";
+
+import CurencyPage from "./pages/CurrencyPage";
+
+import { API_URL } from "./constants";
+
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get(API_URL);
+        dispatch(setCoinList(data));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CurencyPage />
     </div>
   );
-}
+};
 
 export default App;
