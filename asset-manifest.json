@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/coin-list/static/css/main.8659990c.css",
+    "main.js": "/coin-list/static/js/main.4837a9d2.js",
+    "index.html": "/coin-list/index.html",
+    "main.8659990c.css.map": "/coin-list/static/css/main.8659990c.css.map",
+    "main.4837a9d2.js.map": "/coin-list/static/js/main.4837a9d2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8659990c.css",
+    "static/js/main.4837a9d2.js"
+  ]
+}
